@@ -48,9 +48,3 @@ Projeye katkıda bulunmak için aşağıdaki adımları takip edebilirsiniz:
 3. Değişikliklerinizi yapıp commit edin (`git commit -m 'Yeni özellik eklendi'`).
 4. **Pull request** açarak değişikliklerinizi paylaşın.
 
-## 📜 Lisans
-Bu proje [MIT Lisansı](LICENSE) kapsamında sunulmaktadır.
-
----
-Daha fazla bilgi almak veya geri bildirimde bulunmak için [GitHub Issues](https://github.com/edamerveatalay/QA-Test-Framework/issues) bölümünü ziyaret edebilirsiniz.
-
