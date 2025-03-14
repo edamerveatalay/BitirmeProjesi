@@ -1,0 +1,25 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "API testing project for petstore.swagger.io using Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:pet": "cypress run --spec \"cypress/e2e/petstore/pet.api.spec.js\"",
+    "test:store": "cypress run --spec \"cypress/e2e/petstore/store.api.spec.js\"",
+    "test:user": "cypress run --spec \"cypress/e2e/petstore/user.api.spec.js\"",
+    "test:all": "npm run test:pet && npm run test:store && npm run test:user",
+    "clean:reports": "rm -rf cypress/reports/* || true",
+    "pretest": "npm run clean:reports",
+    "posttest": "echo 'Test report is available in cypress/reports directory'"
+  },
+  "keywords": ["api-testing", "cypress", "petstore", "automation"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.1.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mochawesome": "^7.1.3"
+  }
+}

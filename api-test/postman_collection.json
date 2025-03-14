@@ -1,0 +1,524 @@
+{
+  "info": {
+    "name": "Pet Store API Collection",
+    "description": "A collection for testing the Pet Store API (https://petstore.swagger.io/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Pet",
+      "description": "Everything about your Pets",
+      "item": [
+        {
+          "name": "Add a new pet to the store",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/pet",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "pet"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"Dogs\"\n  },\n  \"name\": \"Buddy\",\n  \"photoUrls\": [\n    \"https://example.com/dog-photo.jpg\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"friendly\"\n    }\n  ],\n  \"status\": \"available\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Find pet by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/pet/{{petId}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "pet",
+                "{{petId}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Update an existing pet",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/pet",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "pet"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": {{petId}},\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"Dogs\"\n  },\n  \"name\": \"Max\",\n  \"photoUrls\": [\n    \"https://example.com/dog-photo.jpg\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"friendly\"\n    },\n    {\n      \"id\": 1,\n      \"name\": \"trained\"\n    }\n  ],\n  \"status\": \"pending\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete a pet",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/pet/{{petId}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "pet",
+                "{{petId}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Find pets by status",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=available",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "pet",
+                "findByStatus"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "available"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Store",
+      "description": "Access to Petstore orders",
+      "item": [
+        {
+          "name": "Place an order for a pet",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/store/order",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "store",
+                "order"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"petId\": 1,\n  \"quantity\": 1,\n  \"shipDate\": \"2023-03-09T10:00:00.000Z\",\n  \"status\": \"placed\",\n  \"complete\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Find purchase order by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/store/order/{{orderId}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "store",
+                "order",
+                "{{orderId}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Delete purchase order by ID",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/store/order/{{orderId}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "store",
+                "order",
+                "{{orderId}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Returns pet inventories by status",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/store/inventory",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "store",
+                "inventory"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "description": "Operations about user",
+      "item": [
+        {
+          "name": "Create user",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"username\": \"testuser\",\n  \"firstName\": \"Test\",\n  \"lastName\": \"User\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"Password123\",\n  \"phone\": \"1234567890\",\n  \"userStatus\": 0\n}"
+            }
+          }
+        },
+        {
+          "name": "Get user by username",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/{{username}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "{{username}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Update user",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/{{username}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "{{username}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 0,\n  \"username\": \"updateduser\",\n  \"firstName\": \"Updated\",\n  \"lastName\": \"User\",\n  \"email\": \"updateduser@example.com\",\n  \"password\": \"NewPassword123\",\n  \"phone\": \"0987654321\",\n  \"userStatus\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete user",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/{{username}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "{{username}}"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Create users with array",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/createWithArray",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "createWithArray"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"id\": 0,\n    \"username\": \"testuser1\",\n    \"firstName\": \"Test1\",\n    \"lastName\": \"User1\",\n    \"email\": \"testuser1@example.com\",\n    \"password\": \"Password123\",\n    \"phone\": \"1234567890\",\n    \"userStatus\": 0\n  },\n  {\n    \"id\": 0,\n    \"username\": \"testuser2\",\n    \"firstName\": \"Test2\",\n    \"lastName\": \"User2\",\n    \"email\": \"testuser2@example.com\",\n    \"password\": \"Password456\",\n    \"phone\": \"0987654321\",\n    \"userStatus\": 0\n  }\n]"
+            }
+          }
+        },
+        {
+          "name": "Login user",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/login?username={{username}}&password={{password}}",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "{{username}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{password}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Logout user",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "https://petstore.swagger.io/v2/user/logout",
+              "protocol": "https",
+              "host": [
+                "petstore",
+                "swagger",
+                "io"
+              ],
+              "path": [
+                "v2",
+                "user",
+                "logout"
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "petId",
+      "value": "10"
+    },
+    {
+      "key": "orderId",
+      "value": "1"
+    },
+    {
+      "key": "username",
+      "value": "testuser"
+    },
+    {
+      "key": "password",
+      "value": "Password123"
+    }
+  ]
+}
